@@ -4,74 +4,74 @@ public class Calculator {
     public static void main(String[] args) {
 
 
-        System.out.println("Lütfen islemde kullanmak istediginiz sayiyi giriniz");
+        System.out.println("Please enter the number you want to use in the transaction...");
         Scanner scanner = new Scanner(System.in);
         System.out.println("");
-        System.out.println("Ilk sayi: ");
-        double ilkSayi = scanner.nextDouble();
+        System.out.println("First number: ");
+        double firstNumber = scanner.nextDouble();
 
         System.out.println("");
-        System.out.println("Yapmak istediginiz islem türünü seciniz: ");
-        System.out.println("Toplama icin --->   +");
-        System.out.println("Cikarma icin --->   -");
-        System.out.println("Carpma icin  --->   *");
-        System.out.println("Bölme icin   --->   /");
-        System.out.println("0 - Cikis");
+        System.out.println("Select the type of transaction that you want to implement: ");
+        System.out.println("For the collection --->   +");
+        System.out.println("For the subtraction--->   -");
+        System.out.println("For the multiplication operation  --->   *");
+        System.out.println("for the division  --->   /");
+        System.out.println("0 - Exit");
 
-        char secim = scanner.next().charAt(0);
-        double ikinciSayi;
-        double sonuc;
+        char choosen = scanner.next().charAt(0);
+        double secondNumber;
+        double result;
 
 
-        if (secim == '0') {
-            System.out.println("\nCikis yapiliyor.");
+        if (choosen == '0') {
+            System.out.println("\nChecking out.");
 
         } else {
-            while (secim != '0') {
+            while (choosen != '0') {
 
-                if (!(secim == '+' || secim == '-' || secim == '*' || secim == '/')) {
-                    System.out.println("\nHatali giris yaptiniz lütfen tekrar deneyiniz.");
-                    secim = scanner.next().charAt(0);
-
-                }
-                if (secim == '+') {
-                    System.out.println("islemde kullanmak istediginiz yeni sayiyi girin:");
-                    ikinciSayi = scanner.nextDouble();
-                    sonuc = ilkSayi + ikinciSayi;
-                    System.out.println("Girilen sayilarin toplami: " + sonuc);
-                    ilkSayi = sonuc;
-                    System.out.println("\nIslem türünü secin: + , -, *, /\nCikis icin 0'a basin");
-                    secim = scanner.next().charAt(0);
+                if (!(choosen == '+' || choosen == '-' || choosen == '*' || choosen == '/')) {
+                    System.out.println("\nYou made an incorrect entry, please try again.");
+                    choosen = scanner.next().charAt(0);
 
                 }
-                if (secim == '-') {
-                    System.out.println("islemde kullanmak istediginiz yeni sayiyi girin:");
-                    ikinciSayi = scanner.nextDouble();
-                    sonuc = ilkSayi - ikinciSayi;
-                    System.out.println("Cikarma islemi sonucu: " + sonuc);
-                    ilkSayi = sonuc;
-                    System.out.println("\nIslem türünü secin: + , -, *, /\nCikis icin 0'a basin");
-                    secim = scanner.next().charAt(0);
+                if (choosen == '+') {
+                    System.out.println("Enter the new number you want to use in the transaction:");
+                    secondNumber = scanner.nextDouble();
+                    result = firstNumber + secondNumber;
+                    System.out.println("Sum of entered numbers: " + result);
+                    firstNumber = result;
+                    System.out.println("\nSelect transaction type: + , -, *, /\nPress 0 to exit.");
+                    choosen = scanner.next().charAt(0);
 
                 }
-                if (secim == '*') {
-                    System.out.println("islemde kullanmak istediginiz yeni sayiyi girin:");
-                    ikinciSayi = scanner.nextDouble();
-                    sonuc = ilkSayi * ikinciSayi;
-                    System.out.println("Girilen sayilarin carpimi: " + sonuc);
-                    ilkSayi = sonuc;
-                    System.out.println("\nIslem türünü secin: + , -, *, /\nCikis icin 0'a basin");
-                    secim = scanner.next().charAt(0);
+                if (choosen == '-') {
+                    System.out.println("Enter the new number you want to use in the transaction:");
+                    secondNumber = scanner.nextDouble();
+                    result = firstNumber - secondNumber;
+                    System.out.println("Result of subtraction: " + result);
+                    firstNumber = result;
+                    System.out.println("\nSelect transaction type: + , -, *, /\nPress 0 to exit.");
+                    choosen = scanner.next().charAt(0);
 
                 }
-                if (secim == '/') {
-                    System.out.println("islemde kullanmak istediginiz yeni sayiyi girin:");
-                    ikinciSayi = scanner.nextDouble();
-                    sonuc = ilkSayi / ikinciSayi;
-                    System.out.println("Girlen sayilarin bölüm sonucu: " + sonuc);
-                    ilkSayi = sonuc;
-                    System.out.println("\nIslem türünü secin: + , -, *, /\nCikis icin 0'a basin");
-                    secim = scanner.next().charAt(0);
+                if (choosen == '*') {
+                    System.out.println("Enter the new number you want to use in the transaction: ");
+                    secondNumber = scanner.nextDouble();
+                    result = firstNumber * secondNumber;
+                    System.out.println("Multiplying the entered numbers:: " + result);
+                    firstNumber = result;
+                    System.out.println("\nSelect transaction type: + , -, *, /\nPress 0 to exit.");
+                    choosen = scanner.next().charAt(0);
+
+                }
+                if (choosen == '/') {
+                    System.out.println("Enter the new number you want to use in the transaction:");
+                    secondNumber = scanner.nextDouble();
+                    result = firstNumber / secondNumber;
+                    System.out.println("Division result of the entered numbers:: " + result);
+                    firstNumber = result;
+                    System.out.println("\nSelect transaction type: + , -, *, /\nPress 0 to exit.");
+                    choosen = scanner.next().charAt(0);
                 }
             }
         }
